@@ -1,0 +1,19 @@
+module.exports={
+    entry:'./entry.js',
+    output:{
+        filename:'bundle.js'
+    },
+    devServer:{
+        port:8088,
+        inline:true
+    },
+    module:{
+        loaders:[
+            {test:/\.css$/,loader:'style-loader!css-loader'},
+            {test:/\.js$/,loader:'babel-loader',exclude:/node_modules/}
+        ]
+    },
+    resolve:{
+        "extensions":['.js','.css']
+    }
+};
